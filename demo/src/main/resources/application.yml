@@ -1,0 +1,39 @@
+server:
+  port: 8911
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml # ӳ���ļ���·��ɨ��
+  type-aliases-package: com.example.demo.bean # ����ɨ���
+  global-config:
+    #��������  0:"���ݿ�ID����", 1:"�û�����ID",2:"ȫ��ΨһID (��������ΨһID)", 3:"ȫ��ΨһID UUID";
+    id-type: 0
+    #�ֶβ��� 0:"�����ж�",1:"�� NULL �ж�"),2:"�ǿ��ж�"
+    field-strategy: 2
+    #�շ��»���ת��
+    db-column-underline: true
+    #ˢ��mapper ��������
+    refresh-mapper: true
+    #���ݿ��д�»���ת��
+    #capital-mode: true
+    #���нӿ�ʵ��������
+    #key-generator: com.baomidou.springboot.xxx
+    #�߼�ɾ������
+    logic-delete-value: -1
+    logic-not-delete-value: 0
+    #�Զ��������Խӿ�ʵ��
+    #meta-object-handler: com.baomidou.springboot.xxx
+    #�Զ���SQLע����
+    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+
+
+spring:
+  datasource:             ########################mysql����Դ����###########################
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm-web?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+  redis:
+    #Redis��������ַ��Ĭ��localhost
+    host: localhost
+    #Redis�������˿ڣ�Ĭ��6379
+    port: 6379
